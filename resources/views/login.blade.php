@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="../css/login-style.css">
+=======
+    <link rel="stylesheet" href="{{ asset('css/login-style.css') }}" type="text/css">
+
+>>>>>>> Stashed changes
 </head>
 <body>
 
