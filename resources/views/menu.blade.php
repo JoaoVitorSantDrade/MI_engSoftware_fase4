@@ -189,17 +189,21 @@
                 @endif
                 @endfor
                 <!----------Card responsável por listar todos os agendamentos------------>
-                @if(isset($_SESSION["enfermeiroChefe"]))
+                @for($i = 15; $i <=73; $i = $i+29)
+                @if(isset($resultado[$i]))
+                @if($resultado[$i] == 1)
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="card-menu text-center card-options">
                         <div class="card-options-icon options-icon">
                             <div><i class="fas fa-clipboard"></i></div>
                         </div>
                         <h4 class="card-options_title"><a
-                            href="{{ route('listaAgendamentos') }}">Listagem de agendamentos</a></h4>
+                            href="{{ route('listaAgendamentos') }}">Listagem de agendamentos cadastrados</a></h4>
                     </div>
                 </div>
                 @endif
+                @endif
+                @endfor
                 <!----------Card responsável por mostrar os Planotnistas------------>
                 @for($i = 14; $i <=72; $i = $i+29)
                 @if(isset($resultado[$i]))
@@ -271,8 +275,8 @@
                 @endif
                 @endfor
                 
-                <!--Botão para visualizar agendamentos-->
-                @for($i = 15; $i <=73; $i = $i+29)
+                <!--Botão para visualizar agendamentos ainda não realizados e sem aplicador-->
+                @for($i = 21; $i <=79; $i = $i+29)
                 @if(isset($resultado[$i]))
                 @if($resultado[$i] == 1)
                 <div class="col-6 col-md-4 col-lg-3">
@@ -281,7 +285,7 @@
                             <div><i class="fas fa-notes-medical"></i></div>
                         </div>
                         <h4 class="card-options_title"><a
-                            href="{{ route('agendamentos') }}">Agendamentos</a></h4>
+                            href="{{ route('agendamentos') }}">Verificação de agendamentos</a></h4>
                     </div>
                 </div> <!--Fim do Botão-->
                 @endif
